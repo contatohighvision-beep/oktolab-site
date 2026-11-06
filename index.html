@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Okto Lab · Bonés bordados no atacado</title>
+<meta name="description" content="Dad hats, bucket hats, five panels e viseiras com bordado de alta definição, a partir de 10 unidades. Simulação grátis, produção a partir de 10 dias corridos e envio para todo o Brasil. Peça seu orçamento no WhatsApp.">
+<meta property="og:title" content="Okto Lab · Bonés bordados no atacado a partir de 10 unidades">
+<meta property="og:description" content="Dad hats, bucket hats, five panels e viseiras com a sua marca bordada. Simulação grátis, produção a partir de 10 dias corridos, envio para todo o Brasil.">
+<meta property="og:image" content="img/cat/dadhat-preto.webp">
+<meta property="og:type" content="website">
+<link rel="icon" href="img/brand/polvo-outline-sm.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Fallback temporário enquanto os .ttf da Okta Neue não estão na pasta fonts/ (ver @font-face abaixo) -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,200..900;1,200..900&display=swap">
+<style>
+/* ---------------------------------------------------------------
+   OKTO LAB — bancada de bordado (identidade oficial)
+   Layout: uma linha de bordado costura a página (vinho no claro,
+   dourado no escuro); cartões com borda "ponto reto" dourada;
+   títulos Black em caixa alta com palavras inclinadas; textura de
+   sarja; alternância branco-quente × preto tinta.
+   --------------------------------------------------------------- */
+@font-face{font-family:"Okta Neue";src:url("fonts/OktaNeue-ExtraLight.ttf") format("truetype");font-weight:200;font-style:normal;font-display:swap}
+@font-face{font-family:"Okta Neue";src:url("fonts/OktaNeue-Light.ttf") format("truetype");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"Okta Neue";src:url("fonts/OktaNeue-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Okta Neue";src:url("fonts/OktaNeue-RegularItalic.ttf") format("truetype");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Okta Neue";src:url("fonts/OktaNeue-Medium.ttf") format("truetype");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Okta Neue";src:url("fonts/OktaNeue-MediumItalic.ttf") format("truetype");font-weight:500;font-style:italic;font-display:swap}
+@font-face{font-family:"Okta Neue";src:url("fonts/OktaNeue-SemiBold.ttf") format("truetype");font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:"Okta Neue";src:url("fonts/OktaNeue-Bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"Okta Neue";src:url("fonts/OktaNeue-Heavy.ttf") format("truetype");font-weight:800;font-style:normal;font-display:swap}
+@font-face{font-family:"Okta Neue";src:url("fonts/OktaNeue-Black.ttf") format("truetype");font-weight:900;font-style:normal;font-display:swap}
+
+:root{
+  /* paleta oficial Okto */
+  --vinho:#A21639; --magenta:#CB1981; --magenta-escuro:#8D1C5B; --dourado:#C49959; --bege:#F2CD9A;
+  --laranja:#F37A23; --preto:#050707; --branco:#FFFFFF; --cinza-claro:#E5E5E6;
+  /* papéis */
+  --canvas:#FFFFFF;
+  --canvas-2:#FBF3E6;                 /* bege em baixa opacidade sobre branco */
+  --ink:#050707; --ink-2:#121213; --ink-3:#1C1C1E;
+  --accent:var(--vinho); --accent-hover:var(--magenta-escuro);
+  --thread:var(--dourado);
+  --fg:#050707; --fg-muted:rgba(5,7,7,.64);
+  --fg-on-ink:#FFFFFF; --fg-on-ink-muted:rgba(255,255,255,.68);
+  --line:rgba(5,7,7,.14); --line-on-ink:rgba(255,255,255,.16);
+  --star:var(--laranja);
+  --font:"Okta Neue","Urbanist",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --radius:20px; --gutter:clamp(16px,4vw,56px); --maxw:1240px;
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:auto;-webkit-text-size-adjust:100%}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-stopped{overflow:hidden}
+body{margin:0;background:var(--canvas);color:var(--fg);font-family:var(--font);font-size:17px;line-height:1.55;font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;color:inherit}
+h1,h2,h3{margin:0;text-wrap:balance}
+p{margin:0}
+:focus-visible{outline:3px solid var(--magenta);outline-offset:3px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+.twill{position:relative}
+.twill::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.6;background:repeating-linear-gradient(135deg,rgba(196,153,89,.09) 0 1px,transparent 1px 5px)}
+.on-ink .twill::before,.on-ink.twill::before{background:repeating-linear-gradient(135deg,rgba(255,255,255,.045) 0 1px,transparent 1px 5px)}
+.wrap{width:min(100% - 2*var(--gutter),var(--maxw));margin-inline:auto;position:relative;z-index:1}
+section{position:relative}
+.on-ink{background:var(--ink);color:var(--fg-on-ink)}
+
+/* tipografia */
+.display{font-weight:900;line-height:.92;letter-spacing:-.025em;text-transform:uppercase}
+.display i,.display em{font-style:italic;font-weight:500;color:var(--accent);letter-spacing:-.01em}
+.on-ink .display i,.on-ink .display em{color:var(--dourado)}
+.eyebrow{font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:28px;height:2px;background:currentColor;border-radius:2px}
+.on-ink .eyebrow{color:var(--dourado)}
+.lead{font-size:clamp(17px,1.35vw,20px);color:var(--fg-muted);max-width:56ch;font-weight:400}
+.on-ink .lead{color:var(--fg-on-ink-muted)}
+.label{font-weight:600;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-muted)}
+.on-ink .label{color:var(--fg-on-ink-muted)}
+.spec-light{font-weight:300;letter-spacing:.06em;text-transform:uppercase}
+
+/* ponto reto dourado */
+.stitch{position:relative;border-radius:var(--radius)}
+.stitch::after{content:"";position:absolute;inset:8px;border-radius:calc(var(--radius) - 8px);border:1.5px dashed var(--dourado);pointer-events:none;opacity:.85}
+
+/* botões */
+.btn{--bg:var(--accent);--c:#fff;display:inline-flex;align-items:center;gap:12px;padding:16px 26px;border-radius:999px;background:var(--bg);color:var(--c);text-decoration:none;font-weight:600;border:0;cursor:pointer;position:relative;overflow:hidden;isolation:isolate;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s;will-change:transform}
+.btn::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--accent-hover);transform:translateY(101%);transition:transform .45s cubic-bezier(.76,0,.24,1);border-radius:inherit}
+.btn:hover::before,.btn:focus-visible::before{transform:translateY(0)}
+.btn:hover{box-shadow:0 18px 40px -16px rgba(162,22,57,.65)}
+.btn svg{width:20px;height:20px;flex:none}
+.btn.wa svg.wa-ic{color:#fff}
+.btn.dark{--bg:var(--ink)}
+.btn.dark::before{background:var(--vinho)}
+.btn.ghost{--bg:transparent;--c:var(--fg);box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn.ghost::before{background:var(--ink)}
+.btn.ghost:hover{color:#fff}
+.on-ink .btn.ghost{--c:#fff;box-shadow:inset 0 0 0 1.5px var(--line-on-ink)}
+.on-ink .btn.ghost::before{background:var(--dourado)}
+.on-ink .btn.ghost:hover{color:var(--ink)}
+.btn.gold{--bg:var(--dourado);--c:var(--ink)}
+.btn.gold::before{background:var(--bege)}
+.btn.lg{padding:20px 32px;font-size:18px}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;padding-top:env(safe-area-inset-top,0px);transition:background .4s,backdrop-filter .4s,box-shadow .4s}
+.nav.scrolled{background:rgba(255,255,255,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:74px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand img.logo{height:30px;width:auto}
+.brand img.masc{height:40px;width:auto}
+.nav-links{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+.nav-links a{text-decoration:none;font-size:15px;font-weight:500;position:relative;padding:4px 0}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--vinho);transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav .btn{padding:12px 20px;font-size:15px}
+@media (max-width:960px){.nav-links{display:none}}
+@media (max-width:480px){.nav .btn span{display:none}.nav .btn{padding:12px}.brand img.masc{display:none}}
+
+/* linha de bordado que costura a página */
+#thread{position:absolute;left:0;top:0;width:100%;pointer-events:none;z-index:1;overflow:visible}
+#thread path{fill:none;stroke-width:2.5;stroke-linecap:round;stroke-dasharray:14 9;opacity:.9}
+@media (max-width:900px){#thread{display:none}}
+
+/* ---------- hero ---------- */
+.hero{padding:calc(100px + env(safe-area-inset-top,0px)) 0 48px;overflow:hidden;background:var(--canvas-2)}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,5vw,72px);align-items:center}
+.hero h1{font-size:clamp(46px,7.2vw,108px);margin-top:18px}
+.hero h1 .line{display:block;overflow:hidden}
+.hero h1 .line>span{display:block;will-change:transform}
+.hero .lead{margin-top:22px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero-stats{display:grid;grid-template-columns:repeat(4,auto);gap:10px 28px;margin-top:40px;padding-top:24px;border-top:1.5px dashed var(--dourado);width:fit-content}
+.stat b{display:block;font-size:clamp(28px,3vw,40px);font-weight:900;line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.stat b sup{font-size:.42em;color:var(--vinho);vertical-align:top;margin-right:2px;font-weight:700}
+.stat span{font-size:13px;color:var(--fg-muted);display:block;margin-top:4px}
+.hero-visual{position:relative;aspect-ratio:1/1.06;max-width:100%}
+.cap-stage{position:absolute;inset:0;border-radius:32px;background:radial-gradient(120% 80% at 50% 110%,rgba(162,22,57,.14),transparent 60%),linear-gradient(180deg,#F7F2EA,#EEE4D4);overflow:hidden}
+.cap-stage::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(196,153,89,.08) 0 1px,transparent 1px 5px);opacity:.8}
+.cap-stage .shot{position:absolute;inset:5% 5% 20%;}
+.cap-stage .shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;opacity:0;transform:scale(.94) rotate(-3deg);transition:opacity .5s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1);filter:drop-shadow(0 30px 40px rgba(5,7,7,.22))}
+.cap-stage .shot img.on{opacity:1;transform:none}
+.model-tabs{position:absolute;left:16px;top:16px;display:flex;gap:6px;flex-wrap:wrap;z-index:3}
+.model-tabs button{padding:8px 13px;border-radius:999px;border:1.5px solid rgba(5,7,7,.14);background:rgba(255,255,255,.7);backdrop-filter:blur(8px);font-weight:600;font-size:13px;cursor:pointer;transition:.25s}
+.model-tabs button[aria-pressed="true"]{background:var(--vinho);color:#fff;border-color:var(--vinho)}
+.swatches{position:absolute;left:16px;right:16px;bottom:16px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:10px 12px;border-radius:18px;background:rgba(255,255,255,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:3}
+.swatches .label{margin-right:4px}
+.sw{width:28px;height:28px;border-radius:50%;border:2px solid transparent;cursor:pointer;background:var(--c);box-shadow:inset 0 0 0 1.5px rgba(0,0,0,.1);transition:transform .25s,border-color .25s;padding:0}
+.sw:hover{transform:scale(1.12)}
+.sw[aria-pressed="true"]{border-color:var(--vinho);transform:scale(1.12)}
+.sw-name{margin-left:auto;font-size:13px;font-weight:600;min-width:7ch;text-align:right}
+.sw-all{font-size:12.5px;font-weight:600;color:var(--vinho);text-decoration:none;white-space:nowrap}
+.sw-all:hover{text-decoration:underline}
+.tag-float{position:absolute;z-index:3;padding:9px 13px;border-radius:12px;background:var(--ink);color:#fff;font-weight:600;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;box-shadow:0 14px 30px -12px rgba(0,0,0,.5)}
+.tag-float b{color:var(--dourado);font-weight:600}
+.tag-float.t1{top:64px;right:-6px}
+.tag-float.t2{top:48%;left:-10px}
+.hero-visual{--masc:150px}
+.swatches{right:calc(16px + var(--masc) - 20px)}
+.hero-masc{position:absolute;right:-18px;bottom:-14px;width:var(--masc);z-index:4;transform:rotate(-8deg);filter:drop-shadow(0 16px 24px rgba(5,7,7,.28));pointer-events:none}
+@media (max-width:980px){.hero .wrap{grid-template-columns:1fr}.hero-visual{aspect-ratio:1/1.08;max-width:560px}.hero-stats{grid-template-columns:repeat(2,auto)}.tag-float.t1{right:6px}.tag-float.t2{left:6px;top:52%}}
+@media (max-width:480px){.tag-float.t2{display:none}.hero-visual{--masc:96px}}
+
+/* ---------- marquee ---------- */
+.marquee{overflow:hidden;border-block:1.5px dashed var(--dourado);padding:16px 0;background:var(--canvas)}
+.marquee-track{display:flex;width:max-content;will-change:transform}
+.marquee-track span{font-weight:800;text-transform:uppercase;font-size:clamp(15px,1.5vw,20px);letter-spacing:.02em;padding:0 26px;white-space:nowrap;display:flex;align-items:center;gap:26px}
+.marquee-track span::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--vinho)}
+.marquee-track span.gold{color:var(--vinho)}
+
+/* ---------- clientes ---------- */
+.gallery{padding:clamp(72px,9vw,128px) 0 0;overflow:hidden}
+.gallery .head{display:flex;align-items:end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:36px}
+.gallery h2{font-size:clamp(36px,5vw,68px);max-width:16ch}
+.rail{display:flex;gap:18px;padding:0 var(--gutter) 8px;width:max-content;will-change:transform}
+.card-ph{flex:none;width:clamp(240px,28vw,360px);aspect-ratio:1;border-radius:var(--radius);overflow:hidden;position:relative;background:var(--canvas-2);margin:0}
+.card-ph img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.card-ph:hover img{transform:scale(1.05)}
+.card-ph figcaption{position:absolute;left:12px;bottom:12px;right:12px;display:flex;justify-content:space-between;align-items:center;gap:8px;padding:9px 12px;border-radius:10px;background:rgba(5,7,7,.8);color:#fff;backdrop-filter:blur(6px);font-size:13px}
+.card-ph figcaption b{font-weight:600}
+.card-ph figcaption span{font-weight:600;font-size:10.5px;color:var(--dourado);letter-spacing:.08em;text-transform:uppercase}
+.gallery .hint{font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-muted);display:flex;align-items:center;gap:10px}
+.gallery .hint::after{content:"→";font-size:16px;animation:nudge 1.6s ease-in-out infinite;color:var(--laranja)}
+@keyframes nudge{50%{transform:translateX(6px)}}
+
+/* ---------- por que atacado ---------- */
+.why{padding:clamp(80px,10vw,140px) 0}
+.why .head{max-width:60ch;margin-bottom:48px}
+.why h2{font-size:clamp(38px,5.4vw,76px);margin-top:16px}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.why-card{padding:28px 26px 30px;border-radius:var(--radius);background:var(--ink-2);min-width:0;position:relative;overflow:hidden;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.why-card::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 60% at var(--mx,50%) var(--my,50%),rgba(203,25,129,.22),transparent 70%);opacity:0;transition:opacity .4s}
+.why-card:hover::before{opacity:1}
+.why-card:hover{transform:translateY(-4px)}
+.why-card .num{font-size:clamp(44px,5vw,68px);font-weight:900;line-height:1;color:var(--dourado);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.why-card .num small{font-size:.38em;color:var(--fg-on-ink-muted);font-weight:600;margin-left:6px;letter-spacing:.04em}
+.why-card h3{font-size:21px;margin-top:14px;font-weight:700;letter-spacing:-.01em}
+.why-card p{color:var(--fg-on-ink-muted);margin-top:8px;font-size:15.5px}
+.why-card .vs{margin-top:16px;display:inline-flex;gap:8px;align-items:center;font-weight:600;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dourado);padding:6px 10px;border:1px dashed rgba(196,153,89,.5);border-radius:8px}
+.why-card.wide{grid-column:span 2}
+.why-card.wide p{max-width:60ch}
+@media (max-width:900px){.why-grid{grid-template-columns:1fr 1fr}.why-card.wide{grid-column:span 2}}
+@media (max-width:600px){.why-grid{grid-template-columns:1fr}.why-card.wide{grid-column:span 1}}
+
+/* ---------- processo ---------- */
+.process{padding:clamp(80px,10vw,140px) 0;background:var(--canvas-2)}
+.process .head{margin-bottom:40px;max-width:60ch}
+.process h2{font-size:clamp(38px,5.4vw,76px);margin-top:16px}
+.proc-layout{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,72px);align-items:start}
+.step{padding:28px 0;border-top:1.5px dashed var(--dourado);display:grid;grid-template-columns:64px 1fr;gap:16px;align-items:start;opacity:.38;transition:opacity .4s}
+.step:last-child{border-bottom:1.5px dashed var(--dourado)}
+.step.active{opacity:1}
+.step .n{font-weight:900;font-size:40px;line-height:1;color:var(--vinho);letter-spacing:-.03em}
+.step h3{font-size:22px;font-weight:700;letter-spacing:-.01em}
+.step p{margin-top:8px;color:var(--fg-muted);font-size:15.5px;max-width:46ch}
+.step .spec{margin-top:12px;font-size:12px;font-weight:600;letter-spacing:.04em;display:flex;flex-wrap:wrap;gap:6px 10px}
+.step .spec span{padding:5px 9px;border-radius:6px;background:#fff;border:1px solid var(--line)}
+.proc-visual{position:sticky;top:calc(96px + env(safe-area-inset-top,0px))}
+.ficha{border-radius:var(--radius);background:#fff;color:var(--fg);box-shadow:0 30px 60px -30px rgba(5,7,7,.45),0 0 0 1px var(--line);padding:22px 24px;font-size:13px;position:relative;overflow:hidden;transform:rotate(-1.2deg)}
+.ficha::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 27px,rgba(5,7,7,.05) 27px 28px);pointer-events:none}
+.ficha header{display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:12px}
+.ficha header b{font-size:20px;text-transform:uppercase;font-weight:900;letter-spacing:-.01em}
+.ficha header span{color:var(--vinho);font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:11.5px}
+.ficha dl{display:grid;grid-template-columns:1fr 1fr;gap:6px 18px;margin:0}
+.ficha dt{color:var(--fg-muted);font-weight:300;letter-spacing:.06em;text-transform:uppercase;font-size:11.5px}
+.ficha dd{margin:0;font-weight:600;text-align:right;font-variant-numeric:tabular-nums}
+.ficha .bar{height:8px;border-radius:4px;background:var(--cinza-claro);overflow:hidden;margin-top:4px;grid-column:span 2}
+.ficha .bar i{display:block;height:100%;width:var(--w,0%);background:linear-gradient(90deg,var(--magenta-escuro),var(--vinho));transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
+.ficha .preview{margin-top:14px;border-radius:10px;overflow:hidden;aspect-ratio:16/10;position:relative;background:var(--canvas-2)}
+.ficha .preview img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s}
+.ficha .preview img.on{opacity:1}
+.ficha .preview .stamp{position:absolute;right:12px;top:12px;padding:6px 10px;border:2px solid var(--vinho);color:var(--vinho);border-radius:6px;font-weight:700;letter-spacing:.12em;transform:rotate(-6deg);background:rgba(255,255,255,.88);opacity:0;transition:opacity .4s}
+.ficha .preview .stamp.on{opacity:1}
+.ficha .made{position:absolute;left:18px;bottom:14px;font-weight:600;font-size:10px;letter-spacing:.2em;color:var(--dourado);text-transform:uppercase}
+@media (max-width:900px){.proc-layout{grid-template-columns:1fr}.proc-visual{position:relative;top:auto;order:-1}.ficha{transform:none}.step{opacity:1}}
+
+/* ---------- todos os produtos ---------- */
+.catalog{padding:clamp(80px,10vw,140px) 0}
+.catalog .head{display:flex;align-items:end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:28px}
+.catalog h2{font-size:clamp(38px,5.4vw,80px);margin-top:16px;max-width:14ch}
+.tabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px;margin-bottom:22px;-webkit-overflow-scrolling:touch}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:999px;border:1.5px solid var(--line);background:transparent;cursor:pointer;font-weight:600;font-size:14.5px;transition:.25s;white-space:nowrap}
+.tab span{font-weight:600;font-size:11px;color:var(--fg-muted);padding:2px 7px;border-radius:999px;background:var(--canvas-2)}
+.tab:hover{border-color:var(--ink)}
+.tab[aria-selected="true"]{background:var(--vinho);color:#fff;border-color:var(--vinho)}
+.tab[aria-selected="true"] span{background:var(--dourado);color:var(--ink)}
+.model-intro{display:grid;grid-template-columns:1fr auto;gap:16px 28px;align-items:end;padding:18px 22px;border-radius:14px;background:var(--canvas-2);margin-bottom:16px}
+.model-intro h3{font-size:26px;font-weight:900;text-transform:uppercase;letter-spacing:-.02em}
+.model-intro p{color:var(--fg-muted);font-size:15px;margin-top:4px;max-width:60ch}
+.model-intro dl{display:flex;flex-wrap:wrap;gap:8px 22px;margin:0}
+.model-intro dt{font-weight:300;letter-spacing:.08em;text-transform:uppercase;font-size:11px;color:var(--fg-muted)}
+.model-intro dd{margin:0;font-weight:600;font-size:14px}
+@media (max-width:760px){.model-intro{grid-template-columns:1fr}}
+.prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.prod{margin:0;border-radius:var(--radius);overflow:hidden;background:#F3F0EB;position:relative;min-width:0;display:grid;grid-template-rows:auto auto;transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s;opacity:1}
+.prod:hover{transform:translateY(-4px);box-shadow:0 30px 50px -30px rgba(5,7,7,.35)}
+.prod.out{opacity:0;transform:scale(.96)}
+.prod .ph{position:relative;aspect-ratio:1}
+.prod .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .45s,transform .9s cubic-bezier(.2,.8,.2,1)}
+.prod .ph img.verso{opacity:0}
+.prod:hover .ph img.verso{opacity:1}
+.prod:hover .ph img.frente{transform:scale(1.04)}
+.prod .ph .dot{position:absolute;left:12px;top:12px;width:22px;height:22px;border-radius:50%;background:var(--c);box-shadow:0 0 0 2px #fff,0 0 0 3px rgba(0,0,0,.08)}
+.prod figcaption{padding:14px 14px 14px;background:#fff;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.prod figcaption b{display:block;font-weight:700;font-size:15px}
+.prod figcaption small{display:block;font-weight:300;letter-spacing:.08em;text-transform:uppercase;font-size:11px;color:var(--fg-muted);margin-top:2px}
+.prod .want{flex:none;padding:9px 13px;border-radius:999px;background:var(--ink);color:#fff;border:0;font-weight:600;font-size:12.5px;cursor:pointer;transition:background .25s}
+.prod .want:hover{background:var(--vinho)}
+@media (max-width:1000px){.prod-grid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:640px){.prod-grid{grid-template-columns:repeat(2,1fr);gap:10px}.prod figcaption{flex-direction:column;align-items:flex-start}.prod .want{width:100%;text-align:center}}
+.catalog .cta-row{margin-top:22px;padding:20px 22px;border-radius:var(--radius);background:var(--ink-2);color:#fff;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.catalog .cta-row p{max-width:54ch;color:var(--fg-on-ink-muted)}
+.catalog .cta-row p b{color:#fff}
+
+/* ---------- condições (4 modelos) ---------- */
+.cond{padding:clamp(80px,10vw,140px) 0;background:var(--canvas-2)}
+.cond .head{display:flex;align-items:end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+.cond h2{font-size:clamp(38px,5.4vw,76px);margin-top:16px;max-width:15ch}
+.cond-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.cond-card{background:#fff;border-radius:var(--radius);padding:16px 16px 20px;box-shadow:0 30px 60px -36px rgba(5,7,7,.4),0 0 0 1px var(--line);min-width:0;display:grid;gap:14px;align-content:start}
+.cond-card .ph{aspect-ratio:1;border-radius:14px;overflow:hidden;background:#F3F0EB;position:relative}
+.cond-card .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .4s}
+.cond-card .ph img.on{opacity:1}
+.cond-card h3{font-size:24px;font-weight:900;text-transform:uppercase;letter-spacing:-.02em}
+.cond-card h3 small{display:block;font-weight:300;letter-spacing:.08em;font-size:11px;color:var(--fg-muted);margin-top:4px}
+.cond-card .specs{display:grid;gap:8px;font-size:13.5px}
+.cond-card .specs div{display:grid;gap:2px}
+.cond-card .specs dt{font-weight:300;letter-spacing:.08em;text-transform:uppercase;font-size:10.5px;color:var(--fg-muted)}
+.cond-card .specs dd{margin:0;font-weight:600}
+.cond-card .sws{display:flex;flex-wrap:wrap;gap:6px}
+.cond-card .sws .sw{width:24px;height:24px}
+.cond-card .sws .sw[aria-pressed="true"]{border-color:var(--vinho)}
+.tiers{display:grid;gap:6px;padding-top:12px;border-top:1.5px dashed var(--dourado)}
+.tiers .label{margin-bottom:2px}
+.tiers div{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:13px;font-weight:600;padding:8px 10px;border-radius:8px;background:var(--canvas-2)}
+.tiers div span{font-weight:400;color:var(--fg-muted);font-size:12px}
+.tiers div.best{background:var(--vinho);color:#fff}
+.tiers div.best span{color:rgba(255,255,255,.8)}
+.terms{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:16px}
+.term{display:grid;grid-template-columns:48px 1fr;gap:12px;align-items:center;padding:16px 18px;border-radius:var(--radius);background:var(--ink-2);color:#fff;min-width:0}
+.term .ic{width:48px;height:48px;border-radius:12px;background:var(--ink-3);color:var(--dourado);display:grid;place-items:center}
+.term .ic svg{width:24px;height:24px}
+.term b{display:block;text-transform:uppercase;font-size:15px;letter-spacing:.03em;font-weight:800}
+.term p{font-size:13.5px;color:var(--fg-on-ink-muted);margin-top:3px}
+@media (max-width:1000px){.cond-grid{grid-template-columns:repeat(2,1fr)}.terms{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.cond-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:0 calc(-1*var(--gutter));padding:4px var(--gutter) 16px;scrollbar-width:none}.cond-grid::-webkit-scrollbar{display:none}.cond-card{flex:none;width:84vw;scroll-snap-align:start}.terms{grid-template-columns:1fr}}
+
+/* ---------- simulador ---------- */
+.simulator{padding:clamp(80px,10vw,140px) 0}
+.sim-layout{display:grid;grid-template-columns:1fr .9fr;gap:clamp(24px,5vw,64px);align-items:start}
+.simulator h2{font-size:clamp(38px,5.4vw,72px);margin-top:16px}
+.simulator .lead{margin-top:18px}
+.sim-form{display:grid;gap:18px;padding:clamp(20px,3vw,32px);border-radius:var(--radius);background:var(--ink-2);color:#fff}
+.field{display:grid;gap:8px;min-width:0}
+.field label,.field .lbl{font-weight:600;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-on-ink-muted)}
+.field input[type=text],.field select{width:100%;padding:14px 16px;border-radius:12px;border:1.5px solid var(--line-on-ink);background:var(--ink-3);color:#fff;font:inherit;font-size:16px}
+.field input:focus,.field select:focus{border-color:var(--dourado);outline:none}
+.field select option{color:#111}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:520px){.row2{grid-template-columns:1fr}}
+.qty{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center}
+.qty output{font-size:44px;font-weight:900;line-height:1;font-variant-numeric:tabular-nums;min-width:4ch;text-align:right;letter-spacing:-.03em}
+.qty output small{font-size:.32em;color:var(--fg-on-ink-muted);font-weight:600;margin-left:6px;text-transform:uppercase;letter-spacing:.1em}
+.ticks{display:flex;justify-content:space-between;margin-top:10px;padding:0 6px;font-size:11px;font-weight:600;letter-spacing:.08em;color:var(--fg-on-ink-muted);font-variant-numeric:tabular-nums}
+.ticks span{position:relative;width:2ch;text-align:center;transition:color .25s}
+.ticks span::before{content:"";position:absolute;left:50%;top:-10px;width:2px;height:6px;margin-left:-1px;border-radius:1px;background:rgba(255,255,255,.22)}
+.ticks span.on{color:var(--dourado)}.ticks span.on::before{background:var(--dourado)}
+.qty-max{display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:16px 18px;border-radius:12px;border:1.5px dashed rgba(196,153,89,.65);background:rgba(162,22,57,.16);animation:qtyIn .35s cubic-bezier(.2,.8,.2,1)}
+.qty-max[hidden]{display:none}
+.qty-max p{font-size:15px;line-height:1.4;color:#fff;flex:1 1 240px;margin:0}
+.qty-max p b{color:var(--bege)}
+.sim-form .qty-max .btn{width:auto;padding:14px 22px;font-size:15px;flex:0 0 auto}
+@keyframes qtyIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:3px;background:linear-gradient(90deg,var(--vinho) var(--p,0%),var(--ink-3) var(--p,0%));outline:none;border:0;margin:0}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;border-radius:50%;background:#fff;border:4px solid var(--vinho);cursor:grab;box-shadow:0 6px 16px -6px rgba(0,0,0,.6)}
+input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;background:#fff;border:4px solid var(--vinho);cursor:grab}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{position:relative}
+.chip input{position:absolute;inset:0;opacity:0;cursor:pointer;margin:0}
+.chip span{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;border:1.5px solid var(--line-on-ink);font-size:14px;font-weight:500;transition:.25s;cursor:pointer;user-select:none}
+.chip span i{width:12px;height:12px;border-radius:50%;background:var(--c);box-shadow:inset 0 0 0 1px rgba(255,255,255,.25)}
+.chip input:checked+span{border-color:var(--dourado);background:rgba(196,153,89,.16)}
+.chip input:focus-visible+span{outline:3px solid var(--magenta);outline-offset:2px}
+.chip[hidden]{display:none}
+.sim-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:16px;border-radius:12px;background:var(--ink-3);border:1.5px dashed rgba(196,153,89,.5)}
+.sim-summary div{min-width:0}
+.sim-summary b{display:block;font-size:24px;font-weight:900;line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.sim-summary span{display:block;font-size:12px;color:var(--fg-on-ink-muted);margin-top:4px}
+.sim-summary b.ok{color:var(--dourado)}
+.sim-summary div.prazo{display:flex;flex-direction:column;justify-content:flex-start}
+.sim-summary div.prazo span{margin:0 0 4px}
+@media (max-width:520px){.sim-summary{grid-template-columns:1fr 1fr}}
+.sim-form .btn{justify-content:center;width:100%}
+.sim-note{font-size:13px;color:var(--fg-on-ink-muted);text-align:center}
+.sim-note a{color:var(--dourado)}
+a.sim-note{display:block;color:var(--dourado);font-weight:600}
+.sim-aside{display:grid;gap:14px;margin-top:28px}
+.bullet{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start}
+.bullet .ic{width:44px;height:44px;border-radius:12px;background:var(--ink);color:var(--dourado);display:grid;place-items:center}
+.bullet .ic svg{width:22px;height:22px}
+.bullet b{display:block;font-weight:700}
+.bullet p{color:var(--fg-muted);font-size:15px;margin-top:2px}
+.retail{margin-top:28px;padding:18px 20px;border-radius:14px;background:var(--canvas-2);display:flex;gap:14px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.retail p{font-size:15px;max-width:40ch}
+.retail a{font-weight:600;color:var(--vinho);text-decoration:none;white-space:nowrap}
+.retail a:hover{text-decoration:underline}
+@media (max-width:900px){.sim-layout{grid-template-columns:1fr}}
+
+/* ---------- avaliações ---------- */
+.reviews{padding:clamp(80px,10vw,140px) 0;overflow:hidden;background:var(--preto)}
+.reviews .head{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end;margin-bottom:28px}
+.reviews h2{font-size:clamp(38px,5.4vw,76px);margin-top:16px;max-width:16ch}
+.score{display:flex;align-items:center;gap:16px}
+.score .big{font-size:clamp(64px,7vw,96px);font-weight:900;line-height:.9;color:var(--dourado);font-variant-numeric:tabular-nums;letter-spacing:-.04em}
+.score .stars{color:var(--laranja);letter-spacing:3px;font-size:20px}
+.score small{display:block;font-size:14px;color:var(--fg-on-ink-muted);margin-top:4px}
+.score small b{color:#fff;font-weight:700}
+.logos-strip{display:flex;flex-wrap:wrap;gap:10px 28px;align-items:center;padding:16px 0 26px;border-top:1px dashed rgba(196,153,89,.4);margin-bottom:10px}
+.logos-strip .label{color:var(--fg-on-ink-muted)}
+.logos-strip span.lg{font-weight:900;text-transform:uppercase;letter-spacing:.06em;font-size:15px;color:rgba(255,255,255,.85)}
+.logos-strip span.lg.serif{font-weight:500;font-style:italic;text-transform:none;font-size:17px}
+.rev-rows{display:grid;gap:14px;margin:0 calc(-1*var(--gutter))}
+.rev-row{overflow:hidden;position:relative;cursor:grab;user-select:none}
+.rev-row.dragging{cursor:grabbing}
+.rev-track{display:flex;gap:14px;width:max-content;padding:4px 0;will-change:transform}
+.rev{flex:none;width:min(84vw,380px);padding:22px 22px 20px;border-radius:20px;background:#fff;color:var(--fg);display:grid;gap:12px;align-content:start;position:relative}
+.rev::after{content:"";position:absolute;inset:8px;border-radius:12px;border:1.5px dashed var(--dourado);pointer-events:none}
+.rev .top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.rev .stars{color:var(--magenta);letter-spacing:2px;font-size:15px}
+.rev .user{font-weight:700;font-size:14px}
+.rev .var{font-size:12.5px;color:var(--fg-muted);font-weight:400}
+.rev blockquote{margin:0;font-size:16px;line-height:1.45;font-weight:700}
+.rev blockquote::before{content:"“";color:var(--vinho)}
+.rev blockquote::after{content:"”";color:var(--vinho)}
+.rev .img{border-radius:10px;overflow:hidden;aspect-ratio:16/9}
+.rev .img img{width:100%;height:100%;object-fit:cover}
+.rev .src{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-muted)}
+.reviews .cta-row{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:28px}
+@media (max-width:900px){.reviews .head{grid-template-columns:1fr}.rev-row.r2{display:none}}
+
+/* ---------- FAQ ---------- */
+.faq{padding:clamp(80px,10vw,140px) 0;position:relative}
+.faq-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(24px,5vw,72px)}
+.faq h2{font-size:clamp(38px,5.4vw,72px);margin-top:16px}
+.faq .lead{margin-top:18px}
+.faq .tent{position:absolute;left:-40px;bottom:-30px;width:clamp(220px,28vw,420px);opacity:.9;pointer-events:none}
+.faq-list{display:grid}
+details{border-top:1.5px dashed var(--dourado)}
+details:last-child{border-bottom:1.5px dashed var(--dourado)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;font-weight:700;font-size:18px}
+summary::-webkit-details-marker{display:none}
+summary .pm{width:32px;height:32px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;flex:none;transition:.35s}
+summary .pm::before{content:"+";font-size:20px;line-height:1;transition:transform .35s}
+details[open] summary .pm{background:var(--vinho);border-color:var(--vinho);color:#fff}
+details[open] summary .pm::before{transform:rotate(45deg)}
+details .ans{padding:0 0 22px;color:var(--fg-muted);max-width:60ch}
+details .ans a{color:var(--vinho)}
+@media (max-width:900px){.faq-layout{grid-template-columns:1fr}.faq .tent{display:none}}
+
+/* ---------- CTA final + footer ---------- */
+.final{padding:clamp(80px,10vw,150px) 0 clamp(60px,8vw,110px);text-align:center;overflow:hidden;background:var(--vinho);color:#fff}
+.final .eyebrow{color:var(--bege)}
+.final h2{font-size:clamp(48px,9vw,140px);line-height:.9}
+.final .display i{color:var(--bege)}
+.final .lead{margin:22px auto 0;text-align:center;color:rgba(255,255,255,.8)}
+.final .hero-ctas{justify-content:center}
+.final .btn{--bg:var(--ink);--c:#fff}
+.final .btn::before{background:var(--magenta-escuro)}
+.final .btn.ghost{--bg:transparent;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.4)}
+.final .btn.ghost::before{background:#fff}
+.final .btn.ghost:hover{color:var(--vinho)}
+.final .phone{margin-top:22px;font-size:14px;color:rgba(255,255,255,.8);display:flex;gap:10px;justify-content:center;align-items:center;flex-wrap:wrap;font-weight:500}
+.final .phone button{background:transparent;border:1px solid rgba(255,255,255,.4);border-radius:8px;padding:6px 10px;cursor:pointer;font:inherit;font-size:12px;color:#fff}
+.final-masc{position:absolute;right:clamp(-30px,2vw,40px);bottom:-24px;width:clamp(140px,16vw,260px);transform:rotate(6deg);pointer-events:none}
+@media (max-width:700px){.final-masc{width:120px;right:-20px}}
+footer{padding:36px 0 calc(28px + env(safe-area-inset-bottom,0px));font-size:14px;color:var(--fg-on-ink-muted);background:var(--preto)}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+footer .fl{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+footer .fl img{height:26px;width:auto}
+footer .made{font-weight:600;letter-spacing:.2em;text-transform:uppercase;font-size:11px;color:var(--dourado)}
+footer a{color:#fff;text-decoration:none}
+footer a:hover{color:var(--dourado)}
+footer nav{display:flex;gap:18px;flex-wrap:wrap}
+
+/* WhatsApp flutuante: vinho com ícone */
+.wa-float{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:60;width:58px;height:58px;border-radius:50%;background:var(--vinho);color:#fff;display:grid;place-items:center;box-shadow:0 14px 30px -10px rgba(162,22,57,.7);transform:scale(0);transition:transform .5s cubic-bezier(.34,1.56,.64,1)}
+.wa-float.on{transform:scale(1)}
+.wa-float svg{width:30px;height:30px}
+.wa-float::before{content:"";position:absolute;inset:0;border-radius:50%;background:var(--vinho);animation:pulse-wa 2.2s ease-out infinite;z-index:-1}
+@keyframes pulse-wa{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.7);opacity:0}}
+
+/* reveals */
+.js .rv{opacity:0;transform:translateY(28px)}
+.js .rv.in{opacity:1;transform:none;transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+.js .rv.d1{transition-delay:.08s}.js .rv.d2{transition-delay:.16s}.js .rv.d3{transition-delay:.24s}.js .rv.d4{transition-delay:.32s}
+
+/* cursor */
+.cursor{position:fixed;left:0;top:0;width:14px;height:14px;border-radius:50%;background:var(--magenta);pointer-events:none;z-index:999;transform:translate(-50%,-50%);mix-blend-mode:multiply;opacity:0;transition:width .3s,height .3s,opacity .3s}
+.on-ink-hover .cursor{mix-blend-mode:screen}
+.cursor.big{width:54px;height:54px;opacity:.5}
+@media (hover:hover) and (pointer:fine){.cursor{opacity:.9}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001s!important;transition-duration:.001s!important;scroll-behavior:auto!important}.js .rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<div class="cursor" aria-hidden="true"></div>
+
+<svg style="display:none" aria-hidden="true"><symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></symbol></svg>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Okto Lab, início">
+      <img class="masc" src="img/brand/polvo-outline-sm.png" alt="">
+      <img class="logo" src="img/brand/okto-logo-bordo.svg" alt="Okto Lab">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#produtos">Produtos</a></li>
+      <li><a href="#processo">Processo</a></li>
+      <li><a href="#condicoes">Condições</a></li>
+      <li><a href="#avaliacoes">Avaliações</a></li>
+      <li><a href="#faq">Dúvidas</a></li>
+    </ul>
+    <a class="btn wa" href="#" data-wa="Olá, Okto! Quero um orçamento de bonés bordados no atacado." target="_blank" rel="noopener"><svg class="wa-ic"><use href="#i-wa"/></svg><span>Pedir orçamento</span></a>
+  </div>
+</header>
+
+<svg id="thread" aria-hidden="true"><defs><clipPath id="threadClip"><rect id="threadClipRect" x="0" y="0" width="100%" height="0"/></clipPath></defs><g id="threadG" clip-path="url(#threadClip)"></g></svg>
+
+<main id="top">
+
+<!-- ========== HERO ========== -->
+<section class="hero twill">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow rv">Bordado personalizado no atacado · Made in Minas Gerais</span>
+      <h1 class="display">
+        <span class="line"><span>Sua marca</span></span>
+        <span class="line"><span>bordada em</span></span>
+        <span class="line"><span><i>quatro modelos.</i></span></span>
+      </h1>
+      <p class="lead rv d1">Dad hats, bucket hats, five panels e viseiras com bordado industrial de alta definição, a partir de 10 unidades. Simulação grátis antes de qualquer pagamento, produção a partir de 10 dias corridos e envio para todo o Brasil.</p>
+      <div class="hero-ctas rv d2">
+        <a class="btn wa lg" href="#" data-wa="Olá, Okto! Quero um orçamento de bonés bordados no atacado." target="_blank" rel="noopener"><svg class="wa-ic"><use href="#i-wa"/></svg>Pedir orçamento no WhatsApp</a>
+        <a class="btn ghost lg" href="#simular">Simular meu lote</a>
+      </div>
+      <div class="hero-stats rv d3">
+        <div class="stat"><b data-count="10">10</b><span>unidades de pedido mínimo</span></div>
+        <div class="stat"><b data-count="4">4</b><span>modelos: dad hat, bucket, five panel e viseira</span></div>
+        <div class="stat"><b data-count="10">10</b><span>dias corridos: produção a partir de</span></div>
+        <div class="stat"><b><sup>R$</sup>0</b><span>pela simulação do bordado</span></div>
+      </div>
+    </div>
+
+    <div class="hero-visual rv d1">
+      <div class="cap-stage" id="capStage">
+        <div class="model-tabs" id="heroModels" role="group" aria-label="Escolha o modelo"></div>
+        <div class="shot" id="heroShot"></div>
+        <div class="tag-float t1">BORDADO <b>HD</b> · LINHA ANTIDESBOTE</div>
+        <div class="tag-float t2" id="heroTag">SARJA <b>100% ALGODÃO</b></div>
+        <div class="swatches" role="group" aria-label="Escolha a cor">
+          <span class="label">Cor</span>
+          <span id="heroSw" style="display:contents"></span>
+          <span class="sw-name" id="swName">Preto</span>
+          <a class="sw-all" id="swAll" href="#produtos-dadhat">ver todas as cores →</a>
+        </div>
+      </div>
+      <img class="hero-masc" src="img/brand/polvo-outline.png" alt="">
+    </div>
+  </div>
+</section>
+
+<!-- ========== MARQUEE ========== -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="marquee">
+    <span class="gold">Dad hat</span><span>Bucket hat</span><span class="gold">Five panel</span><span>Viseira</span><span class="gold">Pedido mínimo 10 un.</span><span>Simulação grátis</span><span class="gold">Produção a partir de 10 dias corridos</span><span>Envio para todo o Brasil</span><span class="gold">Made in Minas Gerais</span>
+  </div>
+</div>
+
+<!-- ========== CLIENTES ========== -->
+<section class="gallery" id="clientes">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="eyebrow rv">Saiu da nossa bancada</span>
+        <h2 class="display rv d1">Marcas que já <i>bordaram</i> com a Okto</h2>
+      </div>
+      <span class="hint rv d2">Arraste ou role</span>
+    </div>
+  </div>
+  <div class="rail" id="rail">
+    <figure class="card-ph"><img src="img/cliente-fier.jpg" alt="Dois dad hats, preto e bege, com a logo FiER bordada em laranja e branco" loading="lazy"><figcaption><b>FiER</b><span>Logo · 2 cores</span></figcaption></figure>
+    <figure class="card-ph"><img src="img/cliente-cookiehouse.jpg" alt="Dad hat off white com casinha bordada e a frase The Cookie House" loading="lazy"><figcaption><b>The Cookie House</b><span>Arte + frase</span></figcaption></figure>
+    <figure class="card-ph"><img src="img/lote-vermelho.jpg" alt="Lote de dad hats vermelhos com gato geométrico bordado em branco" loading="lazy"><figcaption><b>Lote atacado</b><span>Produção em série</span></figcaption></figure>
+    <figure class="card-ph"><img src="img/processo-ficha.jpg" alt="Folha de produção do bordado Bizzu sobre a bancada" loading="lazy"><figcaption><b>Bizzu</b><span>Ficha técnica</span></figcaption></figure>
+    <figure class="card-ph"><img src="img/cliente-criatorio.jpg" alt="Dad hat preto com brasão circular bordado do Criatório Desejo" loading="lazy"><figcaption><b>Criatório Desejo</b><span>Brasão multicor</span></figcaption></figure>
+    <figure class="card-ph"><img src="img/cliente-trilheira.jpg" alt="Bucket hat bege com montanhas e a palavra Trilheira bordadas em verde" loading="lazy"><figcaption><b>Trilheira</b><span>Bucket hat</span></figcaption></figure>
+    <figure class="card-ph"><img src="img/cliente-constela.jpg" alt="Dad hat roxo com a frase feras e queridas bordada na frente e Constela Estúdio na lateral" loading="lazy"><figcaption><b>Constela Estúdio</b><span>Frente + lateral</span></figcaption></figure>
+    <figure class="card-ph"><img src="img/cliente-zuda-al.jpg" alt="Dois dad hats com I love Zuda e A&amp;L Est. 2023 bordados" loading="lazy"><figcaption><b>Zuda · A&amp;L</b><span>Monograma</span></figcaption></figure>
+    <figure class="card-ph"><img src="img/detalhe-nyc.jpg" alt="Detalhe do bordado I love NYC em linha branca sobre sarja azul marinho" loading="lazy"><figcaption><b>Detalhe do ponto</b><span>Densidade calibrada</span></figcaption></figure>
+  </div>
+</section>
+
+<!-- ========== POR QUE ATACADO ========== -->
+<section class="why on-ink twill" id="porque">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow rv">Por que fechar atacado com a Okto</span>
+      <h2 class="display rv d1">Qualidade premium <i>sem exigir</i> lote gigante.</h2>
+    </div>
+    <div class="why-grid">
+      <article class="why-card stitch rv">
+        <div class="num">10<small>UN.</small></div>
+        <h3>Pedido mínimo que cabe no caixa</h3>
+        <p>Teste sua marca com um lote pequeno e reponha quando quiser. Sem travar capital em caixa fechada.</p>
+        <span class="vs">Mercado: 30 un. ou mais</span>
+      </article>
+      <article class="why-card stitch rv d1">
+        <div class="num">R$0<small>SIMULAÇÃO</small></div>
+        <h3>Você vê antes de pagar</h3>
+        <p>Mande a logo em qualquer formato. A gente digitaliza, monta a simulação no boné e envia antes de qualquer pagamento. Você aprova no seu tempo.</p>
+      </article>
+      <article class="why-card stitch rv d2">
+        <div class="num">HD<small>BORDADO</small></div>
+        <h3>Bordado industrial, não doméstico</h3>
+        <p>Letras nítidas, densidade calibrada e linhas resistentes ao desbotamento. O acabamento que o seu cliente final exige.</p>
+      </article>
+      <article class="why-card stitch wide rv">
+        <div class="num">10<small>DIAS CORRIDOS</small></div>
+        <h3>Produção sob encomenda com controle peça por peça</h3>
+        <p>Da ficha técnica ao controle de qualidade, cada peça é conferida antes de sair. Prazo a partir de 10 dias corridos, contado da confirmação do pedido.</p>
+        <span class="vs">Envio para todo o Brasil</span>
+      </article>
+      <article class="why-card stitch rv d1">
+        <div class="num">4<small>MODELOS</small></div>
+        <h3>Dad hat, bucket, five panel e viseira</h3>
+        <p>Um modelo pra cada estilo de marca, evento ou equipe. A mesma qualidade de bordado em todos.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PROCESSO ========== -->
+<section class="process twill" id="processo">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow rv">O padrão Okto em 5 passos</span>
+      <h2 class="display rv d1">Do arquivo digital à peça <i>finalizada.</i></h2>
+      <p class="lead rv d2">Antes da linha tocar o tecido, mapeamos pontos, cores e densidade. Role para acompanhar cada etapa.</p>
+    </div>
+    <div class="proc-layout">
+      <div class="proc-steps" id="steps">
+        <div class="step active" data-step="1" data-img="processo-ficha" data-w="20" data-pontos="—" data-status="Mapeando">
+          <div class="n">1</div>
+          <div><h3>Ficha técnica</h3><p>Recebemos sua logo ou frase e montamos a folha de produção: tamanho da arte, posição na peça, cores de linha e densidade.</p><div class="spec"><span>Área frontal 15 × 7 cm</span><span>Até 30 caracteres</span></div></div>
+        </div>
+        <div class="step" data-step="2" data-img="detalhe-nyc" data-w="45" data-pontos="12.480" data-status="Digitalizado">
+          <div class="n">2</div>
+          <div><h3>Digitalização do bordado</h3><p>A arte vira um arquivo de pontos. Aqui definimos sequência, sentido do ponto e compensação para o tecido não enrugar.</p><div class="spec"><span>Arquivo .DST</span><span>Ponto cheio · tatami</span></div></div>
+        </div>
+        <div class="step" data-step="3" data-img="cliente-fier" data-w="60" data-pontos="12.480" data-status="Em aprovação">
+          <div class="n">3</div>
+          <div><h3>Simulação grátis e aprovação</h3><p>Você recebe a simulação no WhatsApp antes de pagar qualquer valor e aprova no seu tempo. Ajustes de cor e tamanho entram aqui.</p><div class="spec"><span>Sem custo</span><span>Sem compromisso</span></div></div>
+        </div>
+        <div class="step" data-step="4" data-img="lote-vermelho" data-w="85" data-pontos="12.480" data-status="Bordando">
+          <div class="n">4</div>
+          <div><h3>Bordado industrial</h3><p>Pedido confirmado, lote na máquina. Peça por peça, com linha de alta resistência que não desbota na lavagem.</p><div class="spec"><span>A partir de 10 dias corridos</span><span>Frente · lateral · trás</span></div></div>
+        </div>
+        <div class="step" data-step="5" data-img="cliente-cookiehouse" data-w="100" data-pontos="12.480" data-status="Aprovado ✓">
+          <div class="n">5</div>
+          <div><h3>Controle de qualidade e envio</h3><p>Conferência de cada bordado, limpeza de fios, embalagem e postagem para qualquer lugar do Brasil.</p><div class="spec"><span>Envio nacional</span><span>Código de rastreio</span></div></div>
+        </div>
+      </div>
+      <div class="proc-visual rv d1">
+        <div class="ficha" id="ficha">
+          <header><b>Folha de produção</b><span id="fichaStatus">Mapeando</span></header>
+          <dl>
+            <dt>Cliente</dt><dd>Sua marca</dd>
+            <dt>Modelo</dt><dd>Dad hat · sarja 100% algodão</dd>
+            <dt>Área</dt><dd>Frontal 15 × 7 cm</dd>
+            <dt>Pontos</dt><dd id="fichaPontos">—</dd>
+            <dt>Linhas</dt><dd>2 cores · poliéster 40</dd>
+            <dt>Etapa</dt><dd id="fichaEtapa">Ficha técnica</dd>
+            <div class="bar"><i id="fichaBar" style="--w:20%"></i></div>
+          </dl>
+          <div class="preview">
+            <img src="img/processo-ficha.jpg" alt="" class="on" data-k="processo-ficha">
+            <img src="img/detalhe-nyc.jpg" alt="" data-k="detalhe-nyc" loading="lazy">
+            <img src="img/cliente-fier.jpg" alt="" data-k="cliente-fier" loading="lazy">
+            <img src="img/lote-vermelho.jpg" alt="" data-k="lote-vermelho" loading="lazy">
+            <img src="img/cliente-cookiehouse.jpg" alt="" data-k="cliente-cookiehouse" loading="lazy">
+            <span class="stamp" id="fichaStamp">APROVADO</span>
+            <span class="made">Made in Minas Gerais</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TODOS OS PRODUTOS ========== -->
+<section class="catalog twill" id="produtos">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="eyebrow rv">Todos os produtos</span>
+        <h2 class="display rv d1">Quatro modelos. <i>Infinitas marcas.</i></h2>
+      </div>
+      <p class="lead rv d2">Escolha o modelo, veja cada cor em foto de estúdio e mande para o simulador com um toque. A base chega lisa; a sua marca é a gente que borda.</p>
+    </div>
+    <div class="tabs rv" role="tablist" aria-label="Modelos" id="catTabs"></div>
+    <div class="model-intro rv d1" id="modelIntro"></div>
+    <div class="prod-grid rv d1" id="prodGrid"></div>
+    <div class="cta-row stitch rv">
+      <p><b>Não achou a cor?</b> Algumas cores entram sob encomenda. Pergunte no WhatsApp que a gente confirma disponibilidade e prazo.</p>
+      <a class="btn gold" href="#" data-wa="Olá, Okto! Quero saber sobre outras cores disponíveis para pedido no atacado." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Perguntar no WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CONDIÇÕES (4 MODELOS) ========== -->
+<section class="cond twill" id="condicoes">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="eyebrow rv">Condições de atacado</span>
+        <h2 class="display rv d1">Cada modelo, suas cores e <i>faixas</i> de lote.</h2>
+      </div>
+      <p class="lead rv d2">O valor por unidade cai a cada faixa de lote e depende do modelo e do número de bordados. Você recebe a tabela completa no WhatsApp.</p>
+    </div>
+    <div class="cond-grid rv" id="condGrid"></div>
+    <div class="terms">
+      <div class="term stitch rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg></div><div><b>Simulação grátis</b><p>Antes de qualquer pagamento. Aprove no seu tempo.</p></div></div>
+      <div class="term stitch rv d1"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 10h18M7 15h4"/></svg></div><div><b>Pagamento</b><p>50% de entrada + 50% na finalização.</p></div></div>
+      <div class="term stitch rv d2"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg></div><div><b>Frete FOB</b><p>Por conta do cliente. Enviamos para todo o Brasil.</p></div></div>
+      <div class="term stitch rv d3"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 3v18M3 12h18"/></svg></div><div><b>Acima de 30 un.</b><p>Orçamento personalizado no WhatsApp.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SIMULADOR / CAPTURA ========== -->
+<section class="simulator twill" id="simular">
+  <div class="wrap sim-layout">
+    <div>
+      <span class="eyebrow rv">Monte o pedido</span>
+      <h2 class="display rv d1">Monte o pedido e receba o <i>orçamento</i> no WhatsApp.</h2>
+      <p class="lead rv d2">Escolha quantidade, modelo, cor e onde vai o bordado. A mensagem chega pronta na nossa conversa e você recebe o valor sem compromisso.</p>
+      <div class="sim-aside rv d3">
+        <div class="bullet"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg></div><div><b>Sem cadastro, sem formulário longo</b><p>Você fala direto com quem produz.</p></div></div>
+        <div class="bullet"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3v18M3 12h18"/></svg></div><div><b>Pode misturar cores</b><p>Combine as cores do lote na conversa. A arte é a mesma para todo o pedido.</p></div></div>
+        <div class="bullet"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 10h18M8 2v4M16 2v4"/></svg></div><div><b>Prazo claro desde o início</b><p>Produção a partir de 10 dias corridos após a confirmação do pedido, mais o envio.</p></div></div>
+      </div>
+      <div class="retail rv d3">
+        <p>Quer só uma unidade com a sua frase? A linha varejo está na Shopee.</p>
+        <a href="https://shopee.com.br/shop/1653903055" target="_blank" rel="noopener">Ver loja Okto na Shopee ↗</a>
+      </div>
+    </div>
+
+    <form class="sim-form stitch rv d1" id="simForm" novalidate>
+      <div class="field qty">
+        <div>
+          <label for="qty">Quantidade</label>
+          <input type="range" id="qty" name="qty" min="10" max="50" step="10" value="30" list="qtyTicks" style="--p:50%" aria-describedby="qtyHint">
+          <datalist id="qtyTicks"><option value="10"></option><option value="20"></option><option value="30"></option><option value="40"></option><option value="50"></option></datalist>
+          <div class="ticks" id="ticks" aria-hidden="true"><span>10</span><span>20</span><span>30</span><span>40</span><span>50+</span></div>
+        </div>
+        <output for="qty" id="qtyOut">30<small>un.</small></output>
+      </div>
+      <div class="qty-max" id="qtyMax" hidden>
+        <p><b>50 unidades ou mais?</b> Fala direto com a gente no WhatsApp que a gente monta um orçamento especial.</p>
+        <a class="btn wa" href="#" data-wa="Oi! Quero orçamento para 50 unidades ou mais." target="_blank" rel="noopener"><svg class="wa-ic"><use href="#i-wa"/></svg>Orçamento especial</a>
+      </div>
+      <div class="row2">
+        <div class="field">
+          <label for="modelo">Modelo</label>
+          <select id="modelo" name="modelo">
+            <option value="dadhat">Dad hat</option>
+            <option value="bucket">Bucket hat</option>
+            <option value="five">Five panel</option>
+            <option value="viseira">Viseira</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="arte">Tipo de arte</label>
+          <select id="arte" name="arte">
+            <option value="Logo">Logo da marca</option>
+            <option value="Frase">Frase ou nome</option>
+            <option value="Logo + frase">Logo + frase</option>
+            <option value="Arte exclusiva">Arte exclusiva</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <span class="lbl" id="lblCores">Cores</span>
+        <div class="chips" role="group" aria-labelledby="lblCores" id="colorChips"></div>
+      </div>
+      <div class="field">
+        <span class="lbl" id="lblAreas">Onde vai o bordado</span>
+        <div class="chips" role="group" aria-labelledby="lblAreas" id="areaChips">
+          <label class="chip"><input type="checkbox" name="area" value="Frente" checked><span>Frente</span></label>
+          <label class="chip"><input type="checkbox" name="area" value="Lateral"><span>Lateral</span></label>
+          <label class="chip" data-only="dadhat"><input type="checkbox" name="area" value="Traseira"><span>Traseira</span></label>
+        </div>
+      </div>
+      <div class="row2">
+        <div class="field"><label for="nome">Seu nome</label><input type="text" id="nome" name="nome" autocomplete="name" placeholder="Como te chamamos?"></div>
+        <div class="field"><label for="marca">Marca ou empresa</label><input type="text" id="marca" name="marca" autocomplete="organization" placeholder="Nome da marca"></div>
+      </div>
+      <div class="sim-summary" aria-live="polite">
+        <div><b id="sumQty">30</b><span>unidades</span></div>
+        <div><b class="ok" id="sumMin">✓ mínimo ok</b><span>pedido mínimo 10</span></div>
+        <div><b id="sumBord">1</b><span id="sumBordLbl">bordado</span></div>
+        <div class="prazo"><span>produção a partir de</span><b>10 dias</b></div>
+      </div>
+      <button class="btn wa lg" type="submit"><svg class="wa-ic"><use href="#i-wa"/></svg>Enviar pedido no WhatsApp</button>
+      <p class="sim-note" id="simNote">Abre o WhatsApp com o resumo do lote. Valor por unidade e frete vêm na conversa. Sem compromisso.</p>
+      <a class="sim-note" id="simFallback" href="#" target="_blank" rel="noopener" hidden>O WhatsApp não abriu? Toque aqui para abrir a conversa ↗</a>
+    </form>
+  </div>
+</section>
+
+<!-- ========== AVALIAÇÕES ========== -->
+<section class="reviews on-ink twill" id="avaliacoes">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="eyebrow rv">Não somos nós que estamos dizendo</span>
+        <h2 class="display rv d1">Quem comprou, <i>aprovou.</i></h2>
+      </div>
+      <div class="score rv d2">
+        <div class="big">4,9</div>
+        <div><div class="stars" aria-label="4,9 de 5 estrelas">★★★★★</div><small><b>330 avaliações</b> na Shopee</small></div>
+      </div>
+    </div>
+    <div class="logos-strip rv">
+      <span class="label">Marcas que já fecharam atacado</span>
+      <span class="lg serif">The Cookie House</span><span class="lg">FiER</span><span class="lg">Bizzu</span><span class="lg serif">A&amp;L</span>
+    </div>
+  </div>
+  <div class="rev-rows">
+    <div class="rev-row r1" data-dir="-1"><div class="rev-track"></div></div>
+    <div class="rev-row r2" data-dir="1"><div class="rev-track"></div></div>
+  </div>
+  <div class="wrap cta-row rv">
+    <a class="btn gold lg" href="#" data-wa="Olá, Okto! Vi as avaliações e quero um orçamento de bonés bordados no atacado." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Peça o seu também</a>
+  </div>
+</section>
+
+<!-- ========== FAQ ========== -->
+<section class="faq twill" id="faq">
+  <svg class="tent" viewBox="0 0 400 300" fill="none" stroke="#E5E5E6" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M-20 290c60-40 90-120 140-130s60 70 110 60 60-110 120-120"/><path d="M-30 240c70-30 110-90 160-100s70 50 120 40 60-80 130-90"/><path d="M-10 300c40-70 60-160 130-170s60 90 120 80 60-130 150-140"/></svg>
+  <div class="wrap faq-layout">
+    <div>
+      <span class="eyebrow rv">Dúvidas frequentes</span>
+      <h2 class="display rv d1">Antes de <i>fechar</i> o lote.</h2>
+      <p class="lead rv d2">Não achou sua pergunta? Chama no WhatsApp que a gente responde rápido.</p>
+    </div>
+    <div class="faq-list rv d1">
+      <details><summary>Qual é o pedido mínimo?<span class="pm"></span></summary><div class="ans">10 unidades por pedido, com a mesma arte. Você pode combinar as cores dentro do lote. Acima de 30 unidades, o orçamento é personalizado no WhatsApp.</div></details>
+      <details><summary>Quais são os modelos?<span class="pm"></span></summary><div class="ans">Quatro: dad hat (aba curva, 6 gomos, desestruturado), bucket hat, five panel (5 gomos, aba reta) e viseira em dri-fit com fecho em velcro. Veja cores e fotos em <a href="#produtos">Todos os produtos</a>.</div></details>
+      <details><summary>Posso bordar a logo da minha marca?<span class="pm"></span></summary><div class="ans">Sim. Logos, frases, nomes, monogramas, datas e artes exclusivas. Mande o arquivo em qualquer formato: a simulação do bordado é grátis e você aprova antes de pagar qualquer valor.</div></details>
+      <details><summary>Como funciona o preço?<span class="pm"></span></summary><div class="ans">O valor por unidade depende do modelo, do número de bordados e da faixa de lote: 10 a 19, 20 a 30 ou acima de 30 unidades. Quanto maior o lote, menor o valor. Peça a tabela no WhatsApp ou simule o seu lote.</div></details>
+      <details><summary>Quanto tempo leva?<span class="pm"></span></summary><div class="ans">Produção a partir de 10 dias corridos, contados da confirmação do pedido. Lotes maiores podem pedir um pouco mais, e você recebe o prazo exato no orçamento. Depois disso, o prazo de envio para a sua cidade, com código de rastreio.</div></details>
+      <details><summary>Quais cores estão disponíveis?<span class="pm"></span></summary><div class="ans">Dad hat em off white, preto, cinza, verde, azul marinho, rosa e marrom. Bucket hat em preto, branco, azul royal, vermelho, lilás e bege. Five panel em preto, vermelho, cinza, azul e branco. Viseira em rosa pink, rosa claro, cinza, verde limão e preto.</div></details>
+      <details><summary>Em quais áreas dá para bordar?<span class="pm"></span></summary><div class="ans">Dad hat: frente (até 30 caracteres ou logo), lateral (até 20 caracteres) e traseira. Bucket, five panel e viseira: frente e lateral.</div></details>
+      <details><summary>Como é o pagamento e o envio?<span class="pm"></span></summary><div class="ans">50% de entrada na confirmação do pedido e 50% na finalização, antes do envio. O frete é FOB, por conta do cliente, calculado para a sua cidade. Somos 100% online e enviamos para todo o Brasil.</div></details>
+      <details><summary>Como cuidar da peça?<span class="pm"></span></summary><div class="ans">Lavagem à mão com sabão neutro e secagem à sombra. As linhas são de alta resistência e não desbotam com o uso.</div></details>
+      <details><summary>Produto personalizado tem troca?<span class="pm"></span></summary><div class="ans">Por ser feito sob encomenda com a sua arte, não há troca ou devolução, exceto em caso de defeito de fabricação. Por isso você aprova a simulação antes de bordarmos.</div></details>
+      <details><summary>Quero só uma unidade. Dá?<span class="pm"></span></summary><div class="ans">Dá. A linha varejo, com frase bordada, está na nossa <a href="https://shopee.com.br/shop/1653903055" target="_blank" rel="noopener">loja na Shopee</a>. Esta página é para pedidos a partir de 10 unidades.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CTA FINAL ========== -->
+<section class="final twill" id="contato">
+  <div class="wrap">
+    <span class="eyebrow rv">Chama a Okto</span>
+    <h2 class="display rv d1">Bora bordar <i>a sua marca?</i></h2>
+    <p class="lead rv d2">Orçamento sem compromisso. Mande a logo e a quantidade, a gente devolve a simulação e o valor.</p>
+    <div class="hero-ctas rv d3">
+      <a class="btn wa lg" href="#" data-wa="Olá, Okto! Quero um orçamento de bonés bordados no atacado." target="_blank" rel="noopener"><svg class="wa-ic"><use href="#i-wa"/></svg>Falar no WhatsApp</a>
+      <a class="btn ghost lg" href="https://www.instagram.com/useoktolab/" target="_blank" rel="noopener">@useoktolab</a>
+    </div>
+    <div class="phone rv d4"><span id="phoneTxt">+55 32 99857-1508</span><button type="button" id="copyPhone">copiar</button></div>
+  </div>
+  <img class="final-masc" src="img/brand/polvo-outline.png" alt="">
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fl"><img src="img/brand/okto-logo-branco.svg" alt="Okto Lab"><span class="made">Made in Minas Gerais</span><span>Bonés e chapéus bordados · 100% online</span></div>
+    <nav>
+      <a href="https://www.instagram.com/useoktolab/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://shopee.com.br/shop/1653903055" target="_blank" rel="noopener">Shopee</a>
+      <a href="#" data-wa="Olá, Okto! Quero um orçamento de bonés bordados no atacado." target="_blank" rel="noopener">WhatsApp</a>
+    </nav>
+  </div>
+</footer>
+
+<a class="wa-float" id="waFloat" href="#" data-wa="Olá, Okto! Quero um orçamento de bonés bordados no atacado." target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg><use href="#i-wa"/></svg></a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script>
+/* ============================================================
+   DADOS — edite aqui
+   ============================================================ */
+const WA_NUMBER = '5532998571508';
+
+/* Catálogo: 4 modelos, uma foto de estúdio por cor (img/cat/*.webp).
+   recolor:true = cor sem foto real; versão digital feita a partir da foto de outra cor (aprovar ou trocar). */
+const MODELS = {
+  dadhat: { nome:'Dad Hat', frase:'Aba curva, 6 gomos, copa desestruturada. O modelo que mais sai da bancada.',
+    specs:{ Tecido:'Sarja peletizada premium, 100% algodão', Regulagem:'Fivela metálica strapback, tamanho único', Bordado:'Frente, lateral e traseira' }, tag:'SARJA <b>100% ALGODÃO</b>', areas:3,
+    cores:[ {id:'preto',nome:'Preto',hex:'#1C1A1E'}, {id:'offwhite',nome:'Off white',hex:'#EAE4D6'}, {id:'cinza',nome:'Cinza',hex:'#A9A9A9'}, {id:'verde',nome:'Verde',hex:'#4F6B2F'}, {id:'marinho',nome:'Azul marinho',hex:'#1F2A4A'}, {id:'rosa',nome:'Rosa',hex:'#F3B3C4',recolor:true}, {id:'marrom',nome:'Marrom',hex:'#6B3E24'} ] },
+  bucket: { nome:'Bucket Hat', frase:'Aba larga e painel generoso para artes maiores. O favorito de eventos e marcas de verão.',
+    specs:{ Tecido:'Sarja 100% algodão', Modelagem:'Aba caída com pespontos', Bordado:'Frente e lateral' }, tag:'SARJA <b>100% ALGODÃO</b>', areas:2,
+    cores:[ {id:'preto',nome:'Preto',hex:'#1C1A1E',recolor:true}, {id:'branco',nome:'Branco',hex:'#FFFFFF',recolor:true}, {id:'royal',nome:'Azul royal',hex:'#2338B8'}, {id:'vermelho',nome:'Vermelho',hex:'#D7212A'}, {id:'lilas',nome:'Lilás',hex:'#C9B3D9'}, {id:'bege',nome:'Bege',hex:'#D7C7A6'} ] },
+  five: { nome:'Five Panel', frase:'Cinco gomos, aba reta e painel frontal estruturado. Streetwear puro.',
+    specs:{ Tecido:'Microfibra', Regulagem:'Fita traseira ajustável', Bordado:'Frente e lateral' }, tag:'ABA <b>RETA</b> · 5 GOMOS', areas:2,
+    cores:[ {id:'preto',nome:'Preto',hex:'#1C1A1E'}, {id:'vermelho',nome:'Vermelho',hex:'#D7212A'}, {id:'cinza',nome:'Cinza',hex:'#B8B8BC'}, {id:'azul',nome:'Azul',hex:'#1E8FD6'}, {id:'branco',nome:'Branco',hex:'#FFFFFF'} ] },
+  viseira: { nome:'Viseira', frase:'Dri-fit em tela colmeia, carneira preta e fecho em velcro. Leve para treino, corrida e eventos.',
+    specs:{ Tecido:'Dri-fit (poliéster colmeia)', Regulagem:'Velcro na cor da viseira', Bordado:'Frente e lateral' }, tag:'TECIDO <b>DRI-FIT</b>', areas:2,
+    cores:[ {id:'rosa-pink',nome:'Rosa pink',hex:'#E0287B'}, {id:'rosa-claro',nome:'Rosa claro',hex:'#F6B5C8',verso:true}, {id:'cinza',nome:'Cinza',hex:'#8E8E93',verso:true}, {id:'verde',nome:'Verde limão',hex:'#B5F03A'}, {id:'preta',nome:'Preto',hex:'#1C1A1E',recolor:true} ] },
+};
+const imgOf = (m, c, verso) => `img/cat/${m}-${c.id}${verso ? '-verso' : ''}.webp`;
+
+/* Avaliações reais da Shopee (usuário mascarado, variação, texto fiel).
+   Para adicionar: copie um item. img é opcional (print/foto do cliente). */
+const REVIEWS = [
+  { user:'j*****_', var:'Off-white', estrelas:5, texto:'Ficou exatamente como eu queria, até mais bonito pessoalmente. […] o bordado tem um acabamento impecável' },
+  { user:'t*****a', var:'Verde', estrelas:5, texto:'Antes mesmo de realizar a compra tiraram todas as minhas dúvidas […] Era exatamente o q eu queria!' },
+  { user:'a*****a', var:'Marrom', estrelas:5, texto:'Bordado de qualidade, não parece que vai desfazer com pouco tempo' },
+  { user:'m*****s', var:'Azul', estrelas:5, texto:'Top! Vale cada centavo! Produto de qualidade. Vendedor atencioso e entrega bem antes do prazo' },
+];
+
+/* ============================================================ */
+document.documentElement.classList.add('js');
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const $ = (s,c=document)=>c.querySelector(s), $$=(s,c=document)=>[...c.querySelectorAll(s)];
+const waUrl = txt => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(txt)}`;
+$$('[data-wa]').forEach(a => a.href = waUrl(a.dataset.wa));
+let cursorEl = null;
+function bindCursor(){ if (!cursorEl) return; $$('a,button,.sw,summary,.tab').forEach(el => { if (el.dataset.cb) return; el.dataset.cb = 1; el.addEventListener('mouseenter', () => cursorEl.classList.add('big')); el.addEventListener('mouseleave', () => cursorEl.classList.remove('big')); }); }
+
+/* ---- smooth scroll + GSAP ---- */
+let lenis = null;
+if (window.Lenis && !reduce) {
+  lenis = new Lenis({ lerp:.09, smoothWheel:true });
+  const raf = t => { lenis.raf(t); requestAnimationFrame(raf); }; requestAnimationFrame(raf);
+}
+const scrollToEl = (el, offset=-80) => { if (!el) return; if (lenis) lenis.scrollTo(el, { offset, duration:1.2 }); else el.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' }); };
+$$('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
+  const id = a.getAttribute('href'); if (id.length < 2) return;
+  const m = id.match(/^#produtos-(\w+)$/);
+  if (m) { e.preventDefault(); setTab(m[1]); scrollToEl($('#produtos')); history.replaceState(null,'',id); return; }
+  const el = document.querySelector(id); if (!el) return; e.preventDefault(); scrollToEl(el);
+}));
+if (window.gsap && window.ScrollTrigger) { gsap.registerPlugin(ScrollTrigger); if (lenis) lenis.on('scroll', ScrollTrigger.update); }
+
+/* ---- nav ---- */
+const nav = $('#nav');
+const onScroll = () => nav.classList.toggle('scrolled', (window.scrollY||document.documentElement.scrollTop) > 24);
+addEventListener('scroll', onScroll, { passive:true }); onScroll();
+
+/* ---- reveals ---- */
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold:.1, rootMargin:'0px 0px -6% 0px' });
+$$('.rv').forEach(el => io.observe(el));
+
+/* ---- hero ---- */
+if (window.gsap && !reduce) gsap.from('.hero h1 .line > span', { yPercent:110, duration:1.1, ease:'power4.out', stagger:.1, delay:.15 });
+$$('.hero-stats b[data-count]').forEach(b => {
+  const end = +b.dataset.count; let started = false;
+  new IntersectionObserver((es,o) => { if (es[0].isIntersecting && !started) { started = true; o.disconnect(); if (reduce) return; let t0=null;
+    const tick = ts => { if(!t0) t0=ts; const p=Math.min(1,(ts-t0)/1100); b.textContent = Math.round(end*(1-Math.pow(1-p,3))); if (p<1) requestAnimationFrame(tick); }; requestAnimationFrame(tick); }}).observe(b);
+});
+let heroModel = 'dadhat', heroColor = 'preto';
+function renderHero(){
+  const m = MODELS[heroModel];
+  $('#heroModels').innerHTML = Object.entries(MODELS).map(([k,v]) => `<button type="button" data-m="${k}" aria-pressed="${k===heroModel}">${v.nome}</button>`).join('');
+  $('#heroShot').innerHTML = m.cores.map(c => `<img src="${imgOf(heroModel,c)}" alt="${m.nome} ${c.nome.toLowerCase()} liso, pronto para bordar" data-c="${c.id}" class="${c.id===heroColor?'on':''}" ${c.id===heroColor?'':'loading="lazy"'}>`).join('');
+  $('#heroSw').innerHTML = m.cores.map(c => `<button type="button" class="sw" style="--c:${c.hex}" data-c="${c.id}" aria-label="${c.nome}" aria-pressed="${c.id===heroColor}"></button>`).join('');
+  $('#swName').textContent = m.cores.find(c=>c.id===heroColor)?.nome || '';
+  $('#heroTag').innerHTML = m.tag; $('#swAll').href = '#produtos-'+heroModel;
+  $$('#heroModels button').forEach(b => b.addEventListener('click', () => { heroModel = b.dataset.m; heroColor = MODELS[heroModel].cores[0].id; renderHero(); }));
+  $$('#heroSw .sw').forEach(b => b.addEventListener('click', () => { heroColor = b.dataset.c; $$('#heroSw .sw').forEach(x => x.setAttribute('aria-pressed', x===b)); $$('#heroShot img').forEach(i => i.classList.toggle('on', i.dataset.c===heroColor)); $('#swName').textContent = m.cores.find(c=>c.id===heroColor).nome; }));
+  bindCursor();
+}
+renderHero();
+if (matchMedia('(hover:hover)').matches && !reduce && window.gsap) {
+  const hv = $('.hero-visual');
+  hv.addEventListener('mousemove', e => { const r = hv.getBoundingClientRect(); const x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+    gsap.to($$('#heroShot img.on'), { x:x*18, y:y*14, rotate:x*3, duration:.8, ease:'power3.out', overwrite:'auto' });
+    gsap.to('.tag-float', { x:-x*14, y:-y*10, duration:.9, ease:'power3.out', overwrite:'auto' }); });
+  hv.addEventListener('mouseleave', () => gsap.to([$$('#heroShot img'), '.tag-float'], { x:0, y:0, rotate:0, duration:.9, ease:'power3.out' }));
+}
+
+/* ---- marquee ---- */
+(() => { const tr = $('#marquee'); tr.innerHTML += tr.innerHTML; if (reduce) return; let x=0; const half = () => tr.scrollWidth/2;
+  const loop = () => { x -= .6; if (-x >= half()) x = 0; tr.style.transform = `translate3d(${x}px,0,0)`; requestAnimationFrame(loop); }; loop(); })();
+
+/* ---- galeria horizontal ---- */
+if (window.gsap && !reduce) { const rail = $('#rail'); const amt = () => rail.scrollWidth - innerWidth;
+  gsap.to(rail, { x:() => -amt(), ease:'none', scrollTrigger:{ trigger:'.gallery', start:'top 70%', end:() => '+=' + (amt()*1.1), scrub:.6, invalidateOnRefresh:true } }); }
+$$('.why-card').forEach(c => c.addEventListener('mousemove', e => { const r=c.getBoundingClientRect(); c.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%'); c.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%'); }));
+
+/* ---- processo ---- */
+(() => {
+  const steps = $$('.step'), bar = $('#fichaBar'), pontos = $('#fichaPontos'), status = $('#fichaStatus'), etapa = $('#fichaEtapa'), stamp = $('#fichaStamp'), imgs = $$('.ficha .preview img');
+  const set = s => { steps.forEach(x => x.classList.toggle('active', x===s)); bar.style.setProperty('--w', s.dataset.w+'%'); pontos.textContent = s.dataset.pontos; status.textContent = s.dataset.status; etapa.textContent = s.querySelector('h3').textContent;
+    imgs.forEach(i => i.classList.toggle('on', i.dataset.k === s.dataset.img)); stamp.classList.toggle('on', s.dataset.step === '5'); };
+  const o = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) set(e.target); }), { rootMargin:'-45% 0px -45% 0px', threshold:0 });
+  steps.forEach(s => { o.observe(s); s.addEventListener('mouseenter', () => set(s)); });
+})();
+
+/* ---- catálogo: abas + cards ---- */
+let curTab = 'dadhat';
+function setTab(k){
+  if (!MODELS[k]) return; curTab = k; const m = MODELS[k];
+  $$('#catTabs .tab').forEach(t => t.setAttribute('aria-selected', t.dataset.m===k));
+  $('#modelIntro').innerHTML = `<div><h3>${m.nome}</h3><p>${m.frase}</p></div><dl>${Object.entries(m.specs).map(([a,b])=>`<div><dt>${a}</dt><dd>${b}</dd></div>`).join('')}</dl>`;
+  const grid = $('#prodGrid');
+  grid.innerHTML = m.cores.map(c => `<figure class="prod out" data-recolor="${!!c.recolor}">
+      <div class="ph"><img class="frente" src="${imgOf(k,c)}" alt="${m.nome} na cor ${c.nome.toLowerCase()}, sem bordado, foto de estúdio" loading="lazy">${c.verso ? `<img class="verso" src="${imgOf(k,c,true)}" alt="" loading="lazy">` : ''}<span class="dot" style="--c:${c.hex}"></span></div>
+      <figcaption><div><b>${m.nome}</b><small>${c.nome}</small></div><button type="button" class="want" data-m="${k}" data-c="${c.id}">Quero esse</button></figcaption>
+    </figure>`).join('');
+  requestAnimationFrame(() => requestAnimationFrame(() => $$('.prod', grid).forEach(p => p.classList.remove('out'))));
+  $$('.want', grid).forEach(b => b.addEventListener('click', () => prefill(b.dataset.m, b.dataset.c)));
+  bindCursor(); window.ScrollTrigger && setTimeout(() => ScrollTrigger.refresh(), 450);
+}
+$('#catTabs').innerHTML = Object.entries(MODELS).map(([k,v]) => `<button type="button" class="tab" role="tab" data-m="${k}" aria-selected="${k===curTab}">${v.nome} <span>${v.cores.length}</span></button>`).join('');
+$$('#catTabs .tab').forEach(t => t.addEventListener('click', () => { setTab(t.dataset.m); history.replaceState(null,'','#produtos-'+t.dataset.m); }));
+setTab(curTab);
+
+/* ---- condições: 4 cards ---- */
+(() => {
+  const tiers = `<div class="tiers"><span class="label">Faixas de lote</span><div>10 a 19 un.<span>lote inicial</span></div><div>20 a 30 un.<span>valor menor por unidade</span></div><div class="best">Acima de 30 un.<span>orçamento no WhatsApp</span></div></div>`;
+  $('#condGrid').innerHTML = Object.entries(MODELS).map(([k,m]) => `<article class="cond-card stitch" data-m="${k}">
+      <div class="ph">${m.cores.map((c,i)=>`<img src="${imgOf(k,c)}" alt="${m.nome} ${c.nome.toLowerCase()}" data-c="${c.id}" class="${i===0?'on':''}" loading="lazy">`).join('')}</div>
+      <h3>${m.nome}<small>${Object.values(m.specs)[0]}</small></h3>
+      <dl class="specs">${Object.entries(m.specs).slice(1).map(([a,b])=>`<div><dt>${a}</dt><dd>${b}</dd></div>`).join('')}</dl>
+      <div><span class="label">Cores</span><div class="sws" style="margin-top:6px">${m.cores.map((c,i)=>`<button type="button" class="sw" style="--c:${c.hex}" data-c="${c.id}" aria-label="${c.nome}" aria-pressed="${i===0}" title="${c.nome}"></button>`).join('')}</div></div>
+      ${tiers}
+    </article>`).join('');
+  $$('.cond-card').forEach(card => $$('.sw', card).forEach(b => b.addEventListener('click', () => { $$('.sw', card).forEach(x => x.setAttribute('aria-pressed', x===b)); $$('.ph img', card).forEach(i => i.classList.toggle('on', i.dataset.c===b.dataset.c)); })));
+})();
+
+/* ---- simulador ---- */
+const form = $('#simForm'), qty = $('#qty'), qtyOut = $('#qtyOut'), sumQty = $('#sumQty'), sumBord = $('#sumBord'), sumBordLbl = $('#sumBordLbl'), qtyMax = $('#qtyMax');
+const QTY_MIN = 10, QTY_MAX = 50, QTY_STEP = 10;
+const clampQty = v => Math.min(QTY_MAX, Math.max(QTY_MIN, Math.round((+v || QTY_MIN) / QTY_STEP) * QTY_STEP));
+$('#colorChips').innerHTML = Object.entries(MODELS).flatMap(([k,m]) => m.cores.map(c => `<label class="chip" data-m="${k}"><input type="checkbox" name="cor" value="${c.nome}" data-c="${c.id}"><span><i style="--c:${c.hex}"></i>${c.nome}</span></label>`)).join('');
+function syncColors(keep){
+  const k = $('#modelo').value;
+  $$('#colorChips .chip').forEach(c => { const on = c.dataset.m === k; c.hidden = !on; if (!on) c.querySelector('input').checked = false; });
+  $$('#areaChips .chip[data-only]').forEach(c => { const on = c.dataset.only === k; c.hidden = !on; if (!on) c.querySelector('input').checked = false; });
+  if (!keep && !$$('#colorChips input:checked').length) { const first = $(`#colorChips .chip[data-m="${k}"] input`); if (first) first.checked = true; }
+}
+function updateSim(){
+  const v = clampQty(qty.value); if (+qty.value !== v) qty.value = v;
+  qty.style.setProperty('--p', ((v-QTY_MIN)/(QTY_MAX-QTY_MIN)*100)+'%');
+  const atMax = v >= QTY_MAX;
+  qtyOut.innerHTML = (atMax ? v + '+' : v) + '<small>un.</small>'; sumQty.textContent = atMax ? v + '+' : v;
+  $$('#ticks span').forEach((t, i) => t.classList.toggle('on', QTY_MIN + i*QTY_STEP <= v));
+  qtyMax.hidden = !atMax;
+  const areas = new FormData(form).getAll('area').length || 1;
+  sumBord.textContent = areas; sumBordLbl.textContent = areas > 1 ? 'bordados' : 'bordado';
+}
+$('#modelo').addEventListener('change', () => { syncColors(); updateSim(); }); syncColors();
+qty.addEventListener('input', updateSim); form.addEventListener('change', updateSim); updateSim();
+function prefill(k, cid){
+  $('#modelo').value = k; syncColors(true);
+  $$('#colorChips input').forEach(i => i.checked = false);
+  const chip = $(`#colorChips .chip[data-m="${k}"] input[data-c="${cid}"]`); if (chip) chip.checked = true;
+  updateSim(); scrollToEl($('#simular'), -60);
+}
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  const f = new FormData(form); const cores = f.getAll('cor'), areas = f.getAll('area');
+  const nome = (f.get('nome')||'').trim(), marca = (f.get('marca')||'').trim();
+  const linhas = [ 'Olá, Okto! Quero um orçamento de atacado.', nome ? `Nome: ${nome}` : null, marca ? `Marca: ${marca}` : null,
+    `Quantidade: ${clampQty(f.get('qty')) >= QTY_MAX ? QTY_MAX + ' unidades ou mais' : clampQty(f.get('qty')) + ' unidades'}`, `Modelo: ${MODELS[f.get('modelo')].nome}`, `Arte: ${f.get('arte')}`,
+    `Cores: ${cores.length ? cores.join(', ') : 'a definir'}`, `Bordado em: ${areas.length ? areas.join(', ') : 'a definir'}`, 'Vou enviar a arte em seguida.' ].filter(Boolean);
+  const url = waUrl(linhas.join('\n'));
+  const fb = $('#simFallback'); fb.href = url; fb.hidden = false;
+  const a = document.createElement('a'); a.href = url; a.target = '_blank'; a.rel = 'noopener'; document.body.appendChild(a); a.click(); a.remove();
+});
+
+/* ---- avaliações: duas linhas em marquee com arrasto ---- */
+(() => {
+  const card = r => `<article class="rev"><div class="top"><span class="stars" aria-label="${r.estrelas} de 5 estrelas">${'★'.repeat(r.estrelas)}${'☆'.repeat(5-r.estrelas)}</span><span class="user">${r.user}</span><span class="var">Variação: ${r.var}</span></div><blockquote>${r.texto}</blockquote>${r.img ? `<div class="img"><img src="${r.img}" alt="Foto enviada pelo cliente" loading="lazy"></div>` : ''}<span class="src">Compra verificada · Shopee</span></article>`;
+  const rows = $$('.rev-row');
+  rows.forEach((row, i) => {
+    const list = i ? [...REVIEWS].reverse() : REVIEWS; const track = $('.rev-track', row);
+    let html = list.map(card).join(''); while ((html.match(/<article/g)||[]).length < 8) html += list.map(card).join('');
+    track.innerHTML = html + html; /* duplicado para loop contínuo */
+    if (reduce) return;
+    let x = 0, dir = +row.dataset.dir, paused = false, down = false, sx = 0, startX = 0, speed = .45;
+    const half = () => track.scrollWidth / 2;
+    const norm = () => { const h = half(); if (x <= -h) x += h; if (x > 0) x -= h; };
+    const loop = () => { if (!paused && !down) { x += dir * speed; } norm(); track.style.transform = `translate3d(${x}px,0,0)`; requestAnimationFrame(loop); }; loop();
+    row.addEventListener('mouseenter', () => paused = true); row.addEventListener('mouseleave', () => paused = false);
+    row.addEventListener('pointerdown', e => { down = true; sx = e.clientX; startX = x; row.classList.add('dragging'); row.setPointerCapture(e.pointerId); });
+    row.addEventListener('pointermove', e => { if (down) x = startX + (e.clientX - sx); });
+    const up = () => { down = false; row.classList.remove('dragging'); }; row.addEventListener('pointerup', up); row.addEventListener('pointercancel', up);
+  });
+})();
+
+/* ---- copiar telefone ---- */
+$('#copyPhone').addEventListener('click', async () => { const b = $('#copyPhone');
+  try { await navigator.clipboard.writeText('+55 32 99857-1508'); b.textContent='copiado ✓'; } catch { const r=document.createRange(); r.selectNodeContents($('#phoneTxt')); getSelection().removeAllRanges(); getSelection().addRange(r); b.textContent='selecione e copie'; }
+  setTimeout(() => b.textContent='copiar', 1800); });
+
+/* ---- WhatsApp flutuante ---- */
+new IntersectionObserver(es => $('#waFloat').classList.toggle('on', !es[0].isIntersecting)).observe($('.hero'));
+
+/* ---- linha de bordado: vinho no claro, dourado no escuro ---- */
+(() => {
+  const svg = $('#thread'), g = $('#threadG'), clip = $('#threadClipRect');
+  if (reduce) { svg.remove(); return; }
+  const build = () => {
+    if (innerWidth <= 900) return;
+    const H = document.documentElement.scrollHeight, W = innerWidth;
+    svg.setAttribute('height', H); svg.setAttribute('viewBox', `0 0 ${W} ${H}`); clip.setAttribute('width', W);
+    const gut = Math.max(14, $('.hero .wrap').getBoundingClientRect().left); const x0 = gut*0.42, amp = Math.min(gut*0.28, 22), seg = 220;
+    g.innerHTML = '';
+    $$('main > section, footer').forEach(s => {
+      const r = s.getBoundingClientRect(); const top = r.top + scrollY, bot = top + r.height;
+      const dark = s.classList.contains('on-ink') || s.classList.contains('final') || s.tagName === 'FOOTER';
+      let d = `M ${x0} ${top}`; for (let y = top + seg; y <= bot + seg; y += seg) { const k = Math.round(y/seg) % 2 ? 1 : -1; d += ` Q ${x0 + k*amp} ${Math.min(y - seg/2, bot)}, ${x0} ${Math.min(y, bot)}`; }
+      const p = document.createElementNS('http://www.w3.org/2000/svg','path'); p.setAttribute('d', d); p.setAttribute('stroke', dark ? '#C49959' : '#A21639'); g.appendChild(p);
+    });
+  };
+  build();
+  const draw = () => clip.setAttribute('height', Math.min(document.documentElement.scrollHeight, scrollY + innerHeight*0.72));
+  addEventListener('scroll', draw, { passive:true }); draw();
+  let t; addEventListener('resize', () => { clearTimeout(t); t = setTimeout(() => { build(); draw(); window.ScrollTrigger && ScrollTrigger.refresh(); }, 200); });
+  addEventListener('load', () => { build(); draw(); });
+})();
+
+/* ---- cursor ---- */
+(() => {
+  if (!matchMedia('(hover:hover) and (pointer:fine)').matches || reduce) { $('.cursor').remove(); return; }
+  cursorEl = $('.cursor'); let x=innerWidth/2, y=innerHeight/2, cx=x, cy=y;
+  addEventListener('mousemove', e => { x=e.clientX; y=e.clientY; });
+  const loop = () => { cx += (x-cx)*.22; cy += (y-cy)*.22; cursorEl.style.transform = `translate(${cx}px,${cy}px) translate(-50%,-50%)`; requestAnimationFrame(loop); }; loop();
+  bindCursor();
+  $$('.on-ink,.final').forEach(s => { s.addEventListener('mouseenter', () => document.body.classList.add('on-ink-hover')); s.addEventListener('mouseleave', () => document.body.classList.remove('on-ink-hover')); });
+})();
+
+/* ---- âncora com aba (#produtos-viseira) ---- */
+(() => { const m = location.hash.match(/^#produtos-(\w+)$/); if (m && MODELS[m[1]]) { setTab(m[1]); setTimeout(() => scrollToEl($('#produtos')), 400); } })();
+</script>
+</body>
+</html>
