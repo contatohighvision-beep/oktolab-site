@@ -2,12 +2,20 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
+<!-- Google tag (Google Ads AW-18560567830 · conta Okto 897-010-5847) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18560567830"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18560567830');
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Okto Lab · Bonés bordados no atacado</title>
 <meta name="description" content="Dad hats, bucket hats, five panels e viseiras com bordado de alta definição, a partir de 10 unidades. Simulação grátis, produção a partir de 10 dias corridos e envio para todo o Brasil. Peça seu orçamento no WhatsApp.">
 <meta property="og:title" content="Okto Lab · Bonés bordados no atacado a partir de 10 unidades">
 <meta property="og:description" content="Dad hats, bucket hats, five panels e viseiras com a sua marca bordada. Simulação grátis, produção a partir de 10 dias corridos, envio para todo o Brasil.">
-<meta property="og:image" content="img/cat/dadhat-preto.webp">
+<meta property="og:image" content="https://oktopersonalizados.com.br/img/cat/dadhat-preto.webp">
 <meta property="og:type" content="website">
 <link rel="icon" href="img/brand/polvo-outline-sm.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,6 +30,8 @@
    títulos Black em caixa alta com palavras inclinadas; textura de
    sarja; alternância branco-quente × preto tinta.
    --------------------------------------------------------------- */
+/* @font-face da Okta Neue DESATIVADO em 24/11/2026: os .ttf ainda não estão em fonts/ e geravam 8 erros 404 por visita.
+   Quando os arquivos chegarem, coloque-os em fonts/ e descomente o bloco abaixo.
 @font-face{font-family:"Okta Neue";src:url("fonts/OktaNeue-ExtraLight.ttf") format("truetype");font-weight:200;font-style:normal;font-display:swap}
 @font-face{font-family:"Okta Neue";src:url("fonts/OktaNeue-Light.ttf") format("truetype");font-weight:300;font-style:normal;font-display:swap}
 @font-face{font-family:"Okta Neue";src:url("fonts/OktaNeue-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
@@ -32,6 +42,7 @@
 @font-face{font-family:"Okta Neue";src:url("fonts/OktaNeue-Bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap}
 @font-face{font-family:"Okta Neue";src:url("fonts/OktaNeue-Heavy.ttf") format("truetype");font-weight:800;font-style:normal;font-display:swap}
 @font-face{font-family:"Okta Neue";src:url("fonts/OktaNeue-Black.ttf") format("truetype");font-weight:900;font-style:normal;font-display:swap}
+*/
 
 :root{
   /* paleta oficial Okto */
@@ -910,6 +921,10 @@ const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const $ = (s,c=document)=>c.querySelector(s), $$=(s,c=document)=>[...c.querySelectorAll(s)];
 const waUrl = txt => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(txt)}`;
 $$('[data-wa]').forEach(a => a.href = waUrl(a.dataset.wa));
+/* conversões Google Ads: clique em qualquer botão de WhatsApp (secundária) e envio do simulador (principal) */
+const CONV_WA = 'AW-18560567830/k7FPCJ_X6r4dEJaUr5JF', CONV_SIM = 'AW-18560567830/g8VGCNX5774dEJaUr5JF';
+const conv = id => { try { if (typeof gtag === 'function') gtag('event', 'conversion', { send_to: id }); } catch (e) {} };
+document.addEventListener('click', e => { if (e.target.closest('[data-wa], #simFallback')) conv(CONV_WA); }, true);
 let cursorEl = null;
 function bindCursor(){ if (!cursorEl) return; $$('a,button,.sw,summary,.tab').forEach(el => { if (el.dataset.cb) return; el.dataset.cb = 1; el.addEventListener('mouseenter', () => cursorEl.classList.add('big')); el.addEventListener('mouseleave', () => cursorEl.classList.remove('big')); }); }
 
@@ -1052,6 +1067,7 @@ form.addEventListener('submit', e => {
     `Quantidade: ${clampQty(f.get('qty')) >= QTY_MAX ? QTY_MAX + ' unidades ou mais' : clampQty(f.get('qty')) + ' unidades'}`, `Modelo: ${MODELS[f.get('modelo')].nome}`, `Arte: ${f.get('arte')}`,
     `Cores: ${cores.length ? cores.join(', ') : 'a definir'}`, `Bordado em: ${areas.length ? areas.join(', ') : 'a definir'}`, 'Vou enviar a arte em seguida.' ].filter(Boolean);
   const url = waUrl(linhas.join('\n'));
+  conv(CONV_SIM); conv(CONV_WA);
   const fb = $('#simFallback'); fb.href = url; fb.hidden = false;
   const a = document.createElement('a'); a.href = url; a.target = '_blank'; a.rel = 'noopener'; document.body.appendChild(a); a.click(); a.remove();
 });
